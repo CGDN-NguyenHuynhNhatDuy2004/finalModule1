@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = new Array(20);
+    let numbersLength = parseInt(prompt("Nhập vào độ dài của mảng: "));
+    debugger
+    let i = 0;
+    while (i < numbersLength) {
+        numbers[i] = parseInt(prompt("Nhập vào số thứ " + (i + 1) + ": "));
+        i++;
+    }
+
+
+    let count = 0;
+    for (let j = 0; j < numbersLength; j++) {
+        if (numbers[j] %3===0 && numbers[j]%5===0) {
+            count += numbers[j];
+        }
+    }
+
+
+    document.write("Mảng đã nhập: " + numbers.slice(0, numbersLength).join(", ") + "<br>");
+    document.write("Tổng của các số chia hết cho 3 và 5 là: " + count);
+</script>
+
+</body>
+</html>

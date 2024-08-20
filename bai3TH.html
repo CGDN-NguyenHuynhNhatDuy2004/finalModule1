@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let numbersLength = parseInt(prompt("Nhập vào độ dài của mảng (n): "));
+
+    for (let i = 0; i < numbersLength; i++) {
+        numbers[i] = parseInt(prompt("Nhập vào số thứ " + (i + 1) + ": "));
+    }
+
+    let k = +(prompt("Nhập vào số nguyên k"));
+
+    function demCapSoNguyen() {
+        let count = 0;
+        for (let j = 0; j < numbersLength; j++) {
+            for (let l = j + 1; l < numbersLength; l++) {
+                let sum = numbers[j] + numbers[l];
+                if (sum % k === 0) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+    let result = demCapSoNguyen();
+    alert("Số cặp số có tổng chia hết cho " + k + " là: " + result);
+</script>
+</body>
+</html>
